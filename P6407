@@ -1,0 +1,28 @@
+An analogue clock has the rst twelve natural numbers placed in an equally spaced fashion in a clockwise
+direction on its face. It is possible to draw one line across this regular clock such that the sum of the
+numbers on both sides of the line are equal, as shown in gure A.
+It is not possible to draw such a line for a clock with the rst ve natural numbers on its face.
+However it is possible to draw a line such that the sum of the numbers on both sides of the line dier
+by one, as shown in gure B.
+Your task is to write a program to nd where the line can be drawn for a clock with the rst N
+natural numbers such that the sum of the numbers on both sides of the line are as close as possible to
+each other.
+For some values of N, there will be more than one possible solution. Your program must report
+only the line with the smallest starting number.
+Input
+The input contains a number of test cases with one input value N per case, 2  N  100000, which is
+the largest value on the clock face.
+A value of zero (0) on a line by itself indicates the end of input and should not be processed.
+Output
+The output consists of a single line, for each test case, which contains two integers separated by a single
+space. The integers represent the smallest number followed by the largest number, in the clockwise
+direction, on the same side of the splitting line.
+Sample Input
+12
+5
+13
+0
+Sample Output
+4 9
+3 4
+1 9
