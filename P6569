@@ -1,0 +1,31 @@
+A professor assigned a program to his class for which the output is a string of lower-case letters.
+Unfortunately, he did not specify an ordering of the characters in the string, so he is having diculty
+grading student submissions. Because of that, he has requested that ICPC teams help by writing a
+program that inputs pairs of strings of lower-case letters and determines whether or not the strings
+have the same letters, though possibly in dierent orders. Note that repeated letters are important;
+the string \abc" and \aabbbcccc" are not viewed as having the same letters since the second one has
+more copies of each letter.
+Input
+Input to be processed will be pairs of lines containing nonempty strings of lower-case letters. All input
+will be valid until the end of le indicator. End of le will be signaled by two lines that contain just
+the word `END' in upper case. No input line will be longer than 1,000 characters.
+Output
+Report whether pairs of strings have the same letters or not. Follow the format exactly: `Case', a space,
+the case number, a colon and one space, and the result given as `same' or `different' (lower-case, no
+punctuation). Do not print any trailing spaces.
+Sample Input
+testing
+intestg
+abc
+aabbbcccc
+abcabcbcc
+aabbbcccc
+abc
+xyz
+END
+END
+Sample Output
+Case 1: same
+Case 2: different
+Case 3: same
+Case 4: different
