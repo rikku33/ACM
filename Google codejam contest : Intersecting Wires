@@ -1,0 +1,39 @@
+This problem is taken from a recent code.google.com/codejam contest. Although not required at the
+time the problem specications were given, we have modied a few of the constraints so you will (most
+likely) need to implement an ecient divide-and-conquer algorithm to pass the CS320 harder data set.
+An intranet company wants to connect two buildings with many wires, each connecting a port on the
+rst building to a port on the second building. Wires are straight segments connecting a vertical position
+on the left building to a vertical position on the right building. No two wires share the same endpoint
+on a building. However, from our side viewpoint, some of the wires intersect midway. We also noticed
+that due to dierent tensions of the wires exactly two wires meet at any given intersection point.
+On the picture below, the intersection points are the black circles, while the ports are the white circles.
+
+The question we want to know is how many intersection points should we see given, as input, a set of
+pairs of vertical distances that represent wire connection points on the two buildings.
+Input
+The rst line of the input gives the number T of test cases. The T test cases follow. Each case begins
+with a line containing an integer N, denoting the number of wires you see.
+The next N lines each describe one wire with two integers Ai and Bi. These describe the ports that
+this wire connects: Ai is the height of the port on the left building, and Bi is the height of the port on
+the right building.
+
+For each test case, output one line containing \Case #x: y", where x is the case number (starting from
+1) and y is the number of intersection points you see from the side vantage point.
+Assume the following limits 1  T  1000, 1  Ai  1000000, 1  Bi  1000000 and 1  N  50000,
+Within each test case, all Ai and all Bi are dierent. No three wires intersect at the same point.
+The input should be taken from keyboard/stdin/System.in.
+Sample Input:
+2
+3
+1 10
+5 5
+7 7
+2
+1 1
+2 2
+The output should be sent to console/stdout/System.out.
+Sample Output:
+Case #1: 2
+Case #2: 0
+
+
