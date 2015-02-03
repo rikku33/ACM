@@ -1,0 +1,129 @@
+import java.io.*;
+import java.util.*;
+
+public class wiresH {
+  static int caseNumber;
+  static int count=0;
+  public static void main(String[] args)throws Exception{
+    int number;int a=1;
+    Scanner scanner = new Scanner(new File("input.txt"));
+    //Scanner scanner = new Scanner(System.in);
+    caseNumber = scanner.nextInt();
+    while(scanner.hasNextInt()){
+      while(a<=caseNumber){
+        number = scanner.nextInt();
+        int [][] cable = new int[number][2];
+        for (int i=0; i!=cable.length;i++){
+          cable[i][0]=scanner.nextInt();
+          cable[i][1]=scanner.nextInt();
+        }//end for
+        if (number==1){
+          System.out.println("Case #"+a + ": "+0);
+          a++;
+        }else{
+          shellSort(cable);
+          int [] s = new int [number];
+          int k=0;
+          for (int i=number-1; i>=0;i--){
+             s[k]=cable[i][1];
+             k++;
+         }
+         shellSort1(s);
+       System.out.println("Case #"+a + ": "+count);
+          count=0;
+          a++;
+        }//end else
+      }//end case while
+      
+      
+    }//end input while
+    
+  } //end main class
+  
+  private static void shellSort(int[][] a) {
+    int gap = a.length/2;
+    if (gap%2==0){
+      for (gap = a.length/2-1; gap > 0;gap = (gap == 2) ? 1 : (int)(gap/2.2)) {
+        for (int i = gap; i < a.length; i += 1) {
+          int tmp = a[i][0];
+          int tmp1 = a[i][1];
+          int j = i;
+          for( ; j >=gap && tmp >= a[j - gap][0]; j -= gap){
+            a[j][0] = a[j - gap][0];
+            a[j][1]= a[j-gap][1];
+          }
+          a[j][0] = tmp;
+          a[j][1]=tmp1;
+        }
+      }
+    }//end if
+    else{
+      for (gap = a.length/2; gap > 0;gap = (gap == 2) ? 1 : (int)(gap/2.2)) {
+        for (int i = gap; i < a.length; i += 1) {
+          int tmp = a[i][0];
+          int tmp1 = a[i][1];
+          int j = i;
+          for( ; j >=gap && tmp >= a[j - gap][0]; j -= gap){
+            a[j][0] = a[j - gap][0];
+            a[j][1]= a[j-gap][1];
+          }
+          a[j][0] = tmp;
+          a[j][1]=tmp1;
+        }
+      }
+    }
+  }//end shellSort
+ 
+  private static void shellSort1(int[] a) {
+    for (int gap = a.length/2; gap > 0;gap = (gap == 2) ? 1 : (int)(gap/2.2)) {
+      for (int i = gap; i < a.length; i += 1) {
+        int tmp = a[i];
+        int j = i;
+        for( ; j >=gap && tmp >= a[j - gap]; j -= gap){
+          a[j] = a[j - gap];
+          count ++;
+        }
+        a[j] = tmp;
+      }
+    }
+  }
+  
+  /*
+  //********************************************************************
+  
+  private static int merge(int[] arr, int[] left, int[] right) {
+    int i = 0, j = 0, count = 0;
+    while (i < left.length || j < right.length) {
+      if (i == left.length) {
+        arr[i+j] = right[j];
+        j++;
+      } else if (j == right.length) {
+        arr[i+j] = left[i];
+        i++;
+      } else if (left[i] <= right[j]) {
+        arr[i+j] = left[i];
+        i++;                
+      } else {
+        arr[i+j] = right[j];
+        count += left.length-i;
+        j++;
+      }
+    }
+    return count;
+  }
+  
+ private static int invCount(int[] arr) {
+    if (arr.length < 2)
+      return 0;
+    
+    int m = (arr.length + 1) / 2;
+    int left[] = Arrays.copyOfRange(arr, 0, m);
+    int right[] = Arrays.copyOfRange(arr, m, arr.length);
+    
+    return invCount(left) + invCount(right) + merge(arr, left, right);
+  }
+
+  
+  //************************************************
+  */
+}
