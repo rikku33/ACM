@@ -1,0 +1,30 @@
+The \Occupy the Kitchen" movement by the ve children of the Large family, has taken Mr. and Mrs.
+Large by surprise. The children raised banners demanding the equal distribution of mangos after a
+large number of mangos went missing from the fridge overnight. They presented their demands as the
+family food constitution.
+The Large Family Food Constitution
+ A mango may only be divided into two halves.
+ Children shall receive equal amounts of mangos.
+ Mum and Dad shall receive equal amounts of mangos.
+ Allocation may dier by no more than half a mango amongst all family members.
+ Each family member must receive the maximum amount possible without violating the above
+constitutional items.
+ Extra amounts of mangos that result in the violation of the above constitutional items shall go
+to the goat. Mangos going to the goat must be kept to a minimum.
+Mr. and Mrs Large have agreed to the constitution on the condition that software is developed to
+compute the correct allocation of mangos. Your task is to write a program that allocates mangos to
+each family member and the goat.
+Input
+The input consists of many test cases. The description for each test case consists of an integer, 0 
+G  300, on a line by itself that represents the total number of mangos to be divided.
+A line with a single zero indicates the end of data and should not be processed.
+Output
+The output consists of a single line, for each test case, which contains four values separated by single
+spaces. The rst is the number of mangos for the goat, the second is the number of mangos for dad,
+the third is the number of mangos for mum and the fourth is the number of mangos for each child.
+Each value is written as a decimal with a single digit after the decimal point.
+Sample Input
+41
+0
+Sample Output
+0.0 5.5 5.5 6.0
