@@ -1,0 +1,29 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+class Main {
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//BufferedReader br= new BufferedReader(new FileReader("C:\\Users\\Wei\\Desktop\\input.txt"));
+		int loop;
+		while (br.ready()){
+		    loop = Integer.parseInt(br.readLine());
+		    while (loop !=0){
+		    	String input = br.readLine();
+		    	if (input.charAt(input.length()/2)==input.charAt(input.length()/2-1)){
+		    		System.out.println("Do-it");
+		    	}else{
+		    		System.out.println("Do-it-Not");
+		    	}
+		    	
+		    	loop--;
+		    }
+		  
+	}
+	
+}
+}
+
+
