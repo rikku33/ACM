@@ -1,0 +1,51 @@
+ import java.io.*;
+ class Main {
+ /**
+   * @param args
+   * @throws IOException 
+   * @throws NumberFormatException 
+   */
+  public static void main(String[] args) throws NumberFormatException, IOException {
+   // TODO Auto-generated method stub
+   BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+  // BufferedReader br = new BufferedReader(new FileReader("input.txt")); 
+   int n=Integer.parseInt(br.readLine());
+   while (n!=0){
+    double children=0.0, parent = 0.0, goat=0.0;
+    int mod;
+    double equal;
+    mod=n%7;
+    equal=n/7;
+    if (mod==1){
+     children=equal;
+     parent=equal+0.5;
+    // goat=equal;
+    }else if (mod==2){
+     parent=equal+0.5;
+     goat+=1;
+     children=equal;
+    }else if(mod==3){
+     children=equal+0.5;
+     parent=equal;
+     goat+=0.5;
+    }else if(mod==4){
+     children=equal+0.5;
+     parent=equal+0.5;
+     goat+=0.5;
+    }else if(mod==5){
+     children=equal+0.5;
+     parent=equal+1;
+     goat+=0.5;
+    }else if(mod==6){
+     children=equal+1;
+     parent=equal+0.5;
+     //goat=equal;
+    }else if(mod==0){
+     children=parent=equal;
+    }
+    //System.out.print(n+" ");
+    System.out.println(goat+" "+parent+" "+parent+" "+children);
+    n=Integer.parseInt(br.readLine()); 
+   }
+  }
+ }
