@@ -1,0 +1,26 @@
+This question asks you to implement and experiment with the basic recursive algorithm given at
+http://en.wikipedia.org/wiki/Exponentiation by squaring. It has two main tasks.
+Read in a sequence of integer pairs x and y. Task 1 is to output the last 8 digits of the function
+pow(x; y) = xy. Task 2 is to compute how many multiplications was required to do this using the
+standard squaring exponentiation algorithm. Here the xy represents exponentiation operator (raise x
+to the power of y). Input is terminated with x = y = 0. You can assume both integers x and y are
+nonnegative and at most 8 decimal digits in length.
+Sample Input:
+3 4
+2 5
+10 6
+10 8
+6 13
+0 0
+Sample Output (for program that returns last 8 digits of answer) :
+81
+32
+1000000
+00000000
+60694016
+Sample Output (for program that counts minimum multiplications) :
+2
+3
+3
+3
+5
