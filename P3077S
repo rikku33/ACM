@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.Arrays;
+class Main {
+	public static void main(String[] args) throws IOException{
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br= new BufferedReader(new FileReader("C:\\Users\\Wei\\Desktop\\input.txt"));
+		int loop =0;
+		while (br.ready()){
+			loop= Integer.parseInt(br.readLine());
+			while (loop!=0){
+				String[] result = br.readLine().split(" ");
+				if (Integer.parseInt(result[0])<Integer.parseInt(result[1])){
+					System.out.println("NO BRAINS");
+				}else{
+					System.out.println("MMM BRAINS");
+				}
+				loop--;
+			}
+		}
+	}
+}
