@@ -1,0 +1,47 @@
+ import java.io.*;
+  class Main {
+ public static void main(String[] args) throws NumberFormatException, IOException
+     {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+      //BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+      long n;
+      n=Integer.parseInt(br.readLine());
+      while(n!=0){
+          long start=1,end=1,total=0;
+          long sum=(n+1)*n/2;
+          long target =sum/2 ;
+          long target1 = (sum+1)/2;
+         //System.out.println(target);
+         if (sum%2==0){
+         while(total!=target){
+          if (total>target){
+           total-=start;
+           start++;
+          }else{
+           total+=end;
+           end++;
+          }
+          //System.out.println(total);
+          }
+         end--;
+        System.out.println(start+" "+end);
+          }else{
+           while(total!=target&&total!=target1){
+          if (total>target){
+           total-=start;
+           start++;
+          }else{
+           total+=end;
+           end++;
+          }
+          //System.out.println(total);
+          }
+         end--;
+         System.out.println(start+" "+end);
+          }
+          
+         
+         n=Integer.parseInt(br.readLine());
+      }
+     }
+ }
