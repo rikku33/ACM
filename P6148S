@@ -1,0 +1,54 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+class Main {
+	public static void main(String[] args) throws IOException{
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br= new BufferedReader(new FileReader("C:\\Users\\Wei\\Desktop\\input.txt"));
+		int loop;
+		while (br.ready()){
+		    loop = Integer.parseInt(br.readLine());
+		    int[] year = new int[loop];
+	    	String[] name = new String [loop];
+	    	int count =0;
+		    while (loop !=0){
+		    	String[] inputS = br.readLine().split(" ");
+		    	year[count]=Integer.parseInt(inputS[3])*10000+Integer.parseInt(inputS[2])*100+Integer.parseInt(inputS[1]);
+		    	name[count]=inputS[0];
+		    	count ++;
+		    	loop--;
+		    }
+		    getYoung(year,name);
+		    getOld(year,name);
+		    
+	}
+	
+}
+	private static void getOld(int[]a,String[]b){
+		String name =b[0];
+		int temp = a[0];
+		for (int i=0; i<a.length;i++){
+			if (temp>a[i]){
+				temp=a[i];
+				name = b[i];
+			}
+		}
+		System.out.println(name);
+	}
+	private static void getYoung(int[]a,String[]b){
+		String name =b[0];
+		int temp = a[0];
+		for (int i=0; i<a.length;i++){
+			if (temp<a[i]){
+				temp=a[i];
+				name = b[i];
+				
+			}
+		}
+		System.out.println(name);
+	}
+}
+
+
