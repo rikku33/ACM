@@ -1,0 +1,61 @@
+import java.math.*;
+import java.util.Scanner; 
+public class exp8H { 
+  static int  y;
+  static BigInteger result;
+  static BigInteger mod = new BigInteger("100000000");
+  //static BigInteger one = new BigInteger("1");
+  public static void main(String[] args) {  
+    Scanner in = new Scanner(System.in); 
+    //String a="";
+    String b="";
+    BigInteger x;
+    while (in.hasNext()) {  
+      
+      x= in.nextBigInteger();
+      y= in.nextInt();
+      
+      
+      if (!((x.intValue()==0)&&(y==0))){
+        
+        result =exp(x,y);
+        //2result1=exp1(x,y);
+        b=result.toString();
+        
+        if (b.length()>8){
+          if (x.intValue()==0){
+            System.out.println(0);
+          }else{
+            System.out.println(b.substring(b.length()-8));
+          }
+        }//end for print last 8 digis
+        else{
+          System.out.println(b);
+        }
+        
+        // System.out.println(result);
+        
+      } else{
+        break;
+      }//end for
+    }//end while
+  }//end main
+  private static BigInteger exp(BigInteger a, int b){
+    if (b>0){
+      if (b==1){
+        return a;
+      }else if(b%2==0){
+        return exp(a.pow(2),b/2);
+      }else if (b%2==1){
+        a=a.mod(mod);
+        if (a.intValue()==0){
+          return mod;
+        } 
+        return a.multiply(exp(a.pow(2),(b-1)/2));
+      }
+    }
+    return a.divide(a);
+  }//method call
+  
+  
+}
